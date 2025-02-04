@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Smallest and Largest Finder</title>
+    <script>
+        function findSecondSmallestAndLargest() {
+            const inputArray = JSON.parse(document.getElementById("secondArrayInput").value);
+            const uniqueArray = [...new Set(inputArray)].sort((a, b) => a - b);
+            const secondSmallest = uniqueArray[1] !== undefined ? uniqueArray[1] : null;
+            const secondLargest = uniqueArray[uniqueArray.length - 2] !== undefined ? uniqueArray[uniqueArray.length - 2] : null;
+
+            console.log(`Second Smallest: ${secondSmallest}`);
+            console.log(`Second Largest: ${secondLargest}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Find Second Smallest and Largest</h1>
+    <label for="secondArrayInput">Enter an array (e.g., [4, 2, 9, 1]):</label>
+    <input type="text" id="secondArrayInput" />
+    <button onclick="findSecondSmallestAndLargest()">Find</button>
+</body>
+</html>

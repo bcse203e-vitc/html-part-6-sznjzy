@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number Checker</title>
+    <script>
+        function isArmstrongNumber() {
+            const number = parseInt(document.getElementById("armstrongInput").value);
+            const digits = number.toString().split('');
+            const numDigits = digits.length;
+            const sum = digits.reduce((acc, digit) => acc + Math.pow(parseInt(digit), numDigits), 0);
+            
+            console.log(`${number} is ${sum === number ? '' : 'not '}an Armstrong number.`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Armstrong Number Checker</h1>
+    <label for="armstrongInput">Enter a number:</label>
+    <input type="text" id="armstrongInput" />
+    <button onclick="isArmstrongNumber()">Check</button>
+</body>
+</html>

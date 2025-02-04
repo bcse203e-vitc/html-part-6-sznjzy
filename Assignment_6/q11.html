@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel and Consonant Counter</title>
+    <script>
+        function countVowelsAndConsonants() {
+            const inputString = document.getElementById("stringInput").value;
+            const vowels = inputString.match(/[aeiou]/gi) || [];
+            const consonants = inputString.match(/[bcdfghjklmnpqrstvwxyz]/gi) || [];
+            
+            console.log(`Vowels: ${vowels.length} (${vowels.join(', ')})`);
+            console.log(`Consonants: ${consonants.length}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Vowel and Consonant Counter</h1>
+    <label for="stringInput">Enter a string:</label>
+    <input type="text" id="stringInput" />
+    <button onclick="countVowelsAndConsonants()">Count</button>
+</body>
+</html>

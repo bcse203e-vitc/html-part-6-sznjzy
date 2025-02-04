@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicates</title>
+    <script>
+        function removeDuplicates() {
+            const inputArray = JSON.parse(document.getElementById("arrayInput").value);
+            const uniqueArray = [];
+            inputArray.forEach(item => {
+                if (!uniqueArray.includes(item)) {
+                    uniqueArray.push(item);
+                }
+            });
+            console.log(`Unique Array: [${uniqueArray.join(', ')}]`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Remove Duplicates from Array</h1>
+    <label for="arrayInput">Enter an array (e.g., [1, 2, 2, 3]):</label>
+    <input type="text" id="arrayInput" />
+    <button onclick="removeDuplicates()">Remove Duplicates</button>
+</body>
+</html>
